@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>NZ PhoneStore</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#050607;
+    color:white;
+}
+
+header{
+    background:#0b0f12;
+    padding:25px 15px;
+    text-align:center;
+    border-bottom:2px solid #a6ff00;
+}
+
+.logo{
+    font-size:32px;
+    font-weight:bold;
+    color:#a6ff00;
+}
+
+header p{
+    color:#aaa;
+    margin-top:8px;
+}
+
+.hero{
+    text-align:center;
+    padding:45px 15px;
+    background:linear-gradient(135deg,#111900,#050607);
+}
+
+.hero h1{
+    font-size:32px;
+    margin-bottom:12px;
+}
+
+.hero h1 span{
+    color:#a6ff00;
+}
+
+.hero p{
+    max-width:700px;
+    margin:auto;
+    color:#bbb;
+    line-height:1.7;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    padding:13px 20px;
+    border-radius:10px;
+    margin:12px 4px 0;
+    font-weight:bold;
+}
+
+.wa{
+    background:#25d366;
+    color:white;
+}
+
+.service-btn{
+    background:#a6ff00;
+    color:#000;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:20px 15px 50px;
+}
+
+.search{
+    max-width:650px;
+    margin:10px auto 20px;
+}
+
+.search input{
+    width:100%;
+    padding:15px;
+    border-radius:12px;
+    border:1px solid #333;
+    background:#11161b;
+    color:white;
+    outline:none;
+    font-size:16px;
+}
+
+.filter{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.filter button{
+    border:0;
+    background:#1a2025;
+    color:white;
+    padding:11px 17px;
+    margin:4px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.filter button:hover,
+.filter button.active{
+    background:#a6ff00;
+    color:#000;
+}
+
+.judul{
+    margin:35px 0 18px;
+    padding-left:12px;
+    border-left:5px solid #a6ff00;
+    font-size:26px;
+}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+    gap:15px;
+}
+
+.card{
+    background:#11161b;
+    border:1px solid #272e34;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#a6ff00;
+}
+
+.photo{
+    height:210px;
+    background:#1b2126;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.no-photo{
+    color:#777;
+    text-align:center;
+}
+
+.no-photo b{
+    display:block;
+    font-size:40px;
+    margin-bottom:8px;
+}
+
+.detail{
+    padding:14px;
+}
+
+.detail h3{
+    font-size:17px;
+    margin-bottom:8px;
+}
+
+.badge{
+    display:inline-block;
+    background:#173a10;
+    color:#a6ff00;
+    padding:5px 8px;
+    border-radius:5px;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.minus{
+    background:#422c08;
+    color:#ffb000;
+}
+
+.info{
+    color:#999;
+    font-size:13px;
+    line-height:1.6;
+    margin-top:8px;
+}
+
+.price{
+    color:#a6ff00;
+    font-size:18px;
+    font-weight:bold;
+    margin:12px 0;
+}
+
+.buy{
+    display:block;
+    text-align:center;
+    text-decoration:none;
+    background:#25d366;
+    color:white;
+    padding:10px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.service-box{
+    margin-top:45px;
+    padding:35px 20px;
+    border-radius:18px;
+    text-align:center;
+    background:linear-gradient(135deg,#a6ff00,#6e9e00);
+    color:#000;
+}
+
+.service-box h2{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.service-box p{
+    line-height:1.7;
+}
+
+.service-box a{
+    display:inline-block;
+    margin-top:15px;
+    background:#000;
+    color:#a6ff00;
+    padding:14px 22px;
+    border-radius:10px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.contact{
+    margin-top:30px;
+    padding:25px;
+    background:#11161b;
+    border:1px solid #292f34;
+    border-radius:15px;
+    line-height:1.9;
+}
+
+.contact h2{
+    color:#a6ff00;
+    margin-bottom:10px;
+}
+
+footer{
+    text-align:center;
+    background:#030405;
+    padding:25px 15px;
+    color:#777;
+    line-height:1.8;
+}
+
+footer strong{
+    color:#a6ff00;
+}
+
+@media(max-width:500px){
+
+    .logo{
+        font-size:26px;
+    }
+
+    .hero h1{
+        font-size:25px;
+    }
+
+    .products{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+    }
+
+    .photo{
+        height:160px;
+    }
+
+    .detail{
+        padding:10px;
+    }
+
+    .detail h3{
+        font-size:14px;
+    }
+
+    .info{
+        font-size:11px;
+    }
+
+    .price{
+        font-size:15px;
+    }
+
+    .buy{
+        font-size:12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">
+        📱 NZ PHONESTORE
+    </div>
+
+    <p>
+        Jual Beli HP • iPhone • Android • HP Minus • Service
+    </p>
+
+</header>
+
+
+<section class="hero">
+
+    <h1>
+        Selamat Datang di <span>NZ PhoneStore</span>
+    </h1>
+
+    <p>
+        Menyediakan berbagai pilihan iPhone, Android,
+        HP bekas dan HP minus.
+        Silakan hubungi kami untuk stok dan kondisi terbaru.
+    </p>
+
+    <a class="btn wa"
+       href="https://wa.me/6281220425086"
+       target="_blank">
+        💬 WA TOKO
+    </a>
+
+    <a class="btn service-btn"
+       href="https://wa.me/6285361577277?text=Halo%20NZ%20PhoneStore,%20saya%20ingin%20konsultasi%20service%20HP"
+       target="_blank">
+        🔧 KONSULTASI SERVICE
+    </a>
+
+</section>
+
+
+<div class="container">
+
+
+<!-- PENCARIAN -->
+
+<div class="search">
+
+    <input
+        type="text"
+        id="search"
+        placeholder="🔎 Cari nama HP..."
+        onkeyup="cariProduk()">
+
+</div>
+
+
+<!-- FILTER -->
+
+<div class="filter">
+
+    <button class="active"
+            onclick="filterProduk('semua',this)">
+        SEMUA
+    </button>
+
+    <button onclick="filterProduk('iphone',this)">
+         iPHONE
+    </button>
+
+    <button onclick="filterProduk('android',this)">
+         ANDROID
+    </button>
+
+    <button onclick="filterProduk('minus',this)">
+        ⚠️ HP MINUS
+    </button>
+
+</div>
+
+
+<!-- =================================================
+     IPHONE
+================================================== -->
+
+<h2 class="judul">
+     20 PRODUK iPHONE
+</h2>
+
+<div class="products">
+
+<script>
+
+const iphone = [
+
+["iPhone XR bh81 permanen hitam 64GB","Rp 2.299.000"],
+["iPhone 13 bh83 ibox hitam 128GB","Rp 6.900.000"],
+["iPhone XR bh100 permanen merah 128GB","Rp 2.699.000"],
+["iPhone 11 bh100 permanen 64GB","Rp 3.599.000"],
+["iPhone XR bh100 blue bea cukai 64GB","Rp 2.499.000"],
+["iPhone XR bh100 putih axisonly 128GB","Rp 2.509.000"],
+["iPhone XR bh100 blue permanen 64GB","Rp 2.599.000"],
+["iPhone 11 bh100 cukai putih 64GB","Rp 3.899.000"],
+["iPhone X bh100 permanen 256GB","Rp 2.100.000"],
+["iPhone 11 bh68 permanen merah 128GB","Rp 3.609.000"],
+["iPhone 11 bh80 ibox putih 64GB","Rp 3.500.000"],
+["iPhone 13 bh100 alloperator 100B","Rp 5.200.000"],
+["iPhone 11 bh100 teregister 128GB","Rp 3.700.000"],
+["iPhone 12 bh100 Pro Max 128GB","Rp 5.499.000"],
+["iPhone 13 bh100 ibox 128GB","Rp 7.099.000"],
+["iPhone 13 bh100 256GB","Rp 8.200.000"],
+["iPhone 13 bh100 Pro ibox 128GB","Rp 9.499.000"],
+["iPhone 13 bh100 Pro Max ibox 128GB","Rp 10.499.000"],
+["iPhone 14 bh 100 alloperator 128GB","Rp 5.599.000"],
+["iPhone 15 128GB","Rp 12.999.000"]
+
+];
+
+iphone.forEach((p,i)=>{
+
+let nomor=i+1;
+
+document.write(`
+
+<div class="card product iphone">
+
+    <div class="photo">
+
+        <img
+            src="foto${nomor}.jpg"
+            alt="${p[0]}"
+            onerror="this.style.display='none';
+            this.nextElementSibling.style.display='block';">
+
+        <div class="no-photo" style="display:none">
+
+            <b>📱</b>
+
+            Tambahkan foto${nomor}.jpg
+
+        </div>
+
+    </div>
+
+    <div class="detail">
+
+        <h3>${p[0]}</h3>
+
+        <span class="badge">
+            iPHONE
+        </span>
+
+        <div class="info">
+            ✓ Kondisi sesuai unit<br>
+            ✓ Silakan cek barang<br>
+            ✓ Stok dapat berubah
+        </div>
+
+        <div class="price">
+            ${p[1]}
+        </div>
+
+        <a
+          class="buy"
+          href="https://wa.me/6281220425086?text=Halo%20NZ%20PhoneStore,%20saya%20tertarik%20dengan%20${encodeURIComponent(p[0])}"
+          target="_blank">
+          💬 Tanya / Beli
+        </a>
+
+    </div>
+
+</div>
+
+`);
+
+});
+
+</script>
+
+</div>
+
+
+<!-- =================================================
+     ANDROID
+================================================== -->
+
+<h2 class="judul">
+    20 PRODUK ANDROID
+</h2>
+
+<div class="products">
+
+<script>
+
+const android = [
+
+["infinik smart 6 ram 2/32","Rp 2.499.000"],
+["infinik GT 30 pro ram 8+8/256 ","Rp 4.100.000"],
+["oppo a5i ram 4/128","Rp 1.499.000"],
+["samsung A04S ram 4/64","Rp 1.200.000"],
+["infinik smart 20 ram 4+4/128","Rp 1.800.000"],
+["oppo A3X ram 4+4/64 blue ","Rp 1.299.000"],
+["samsung A25 5G ram 8/256 ","Rp 2.899.000"],
+["Samsung Galaxy S23 8/256 ","Rp 7.299.000"],
+["Samsung Galaxy S24 8/256 ","Rp 9.499.000"],
+["Samsung Galaxy S24 Ultra 12/256","Rp 12.499.000"],
+["Redmi Note 10 4/64","Rp 1.299.000"],
+["Redmi Note 11 4/128","Rp 1.499.000"],
+["Redmi Note 12 4/128 ","Rp 1.699.000"],
+["Redmi Note 13 8/128 ","Rp 1.809.000"],
+["Redmi Note 13 Pro 8/258 ","Rp 2.299.000"],
+["POCO X3 Pro 8/128 ","Rp 1.899.000"],
+["POCO X5 Pro 8/256 ","Rp 2.899.000"],
+["POCO X6 8/256 ","Rp 2.699.000"],
+["OPPO Reno 10 8/256 ","Rp 4.000.000"],
+["Vivo V29 8/256 ","Rp 4.000.000"]
+
+];
+
+android.forEach((p,i)=>{
+
+let nomor=i+21;
+
+document.write(`
+
+<div class="card product android">
+
+    <div class="photo">
+
+        <img
+            src="foto${nomor}.jpg"
+            alt="${p[0]}"
+            onerror="this.style.display='none';
+            this.nextElementSibling.style.display='block';">
+
+        <div class="no-photo" style="display:none">
+
+            <b>📱</b>
+
+            Tambahkan foto${nomor}.jpg
+
+        </div>
+
+    </div>
+
+    <div class="detail">
+
+        <h3>${p[0]}</h3>
+
+        <span class="badge">
+            ANDROID
+        </span>
+
+        <div class="info">
+            ✓ Kondisi sesuai unit<br>
+            ✓ Silakan cek barang<br>
+            ✓ Stok dapat berubah
+        </div>
+
+        <div class="price">
+            ${p[1]}
+        </div>
+
+        <a
+          class="buy"
+          href="https://wa.me/6281220425086?text=Halo%20NZ%20PhoneStore,%20saya%20tertarik%20dengan%20${encodeURIComponent(p[0])}"
+          target="_blank">
+          💬 Tanya / Beli
+        </a>
+
+    </div>
+
+</div>
+
+`);
+
+});
+
+</script>
+
+</div>
+
+
+<!-- =================================================
+     HP MINUS
+================================================== -->
+
+<h2 class="judul">
+    ⚠️ 20 PRODUK HP MINUS
+</h2>
+
+<div class="products">
+
+<script>
+
+const hpMinus = [
+
+["ZTE A35 matot park ori Minus","Rp 399.000","matot"],
+["samsung a10 spiker buruk Minus","Rp 499.000","spiker bawah buruk"],
+["iPhone 7plus bypaas Minus","Rp 699.000","bypas"],
+["oppo a12 lcd Minus","Rp 399.000","wajib ganti lcd"],
+["samsung A03S jaringan lemah Minus","Rp 599.000","jaringan lemah"],
+["infinik smart 5 spiker off Minus","Rp 399.000","spiker off"],
+["nokia rusak punggung cas Minus","Rp 109.000","punggung cas"],
+["iphone 12 ibox bypaas Minus","Rp 699.000","bypas"],
+["redmi 5a hilang bacdor Minus","Rp 199.000","bacdor hilang"],
+["vivo y20 temperatur Minus","Rp 399.000","temperatur"],
+["samsung A11 lcd Minus","Rp 499.000","wajib ganti lcd"],
+["redmi 9A lcd Minus","Rp 399.000","wajib ganti lcd"],
+["realmi c2 tombol samping Minus","Rp 309.000","rusak tombol samping"],
+["iphone XR bayang hitam ","Rp 1.800.000","shadow hitam layar"],
+["itel visio 1 lcd Minus","Rp 189.000","LCD bermasalah"],
+["oppo a1k lcd Minus","Rp 209.000","wajib ganti lcd"],
+["realmi c30 lcd Minus","Rp 309.000","LCD bermasalah"],
+["vivo y91 batre suak","Rp 999.000","wajib ganti batre"],
+["infinik smart 5 matot","Rp 209.000","matih"],
+["iphone Xr bypas ","Rp 509.000","Mati total"]
+
+];
+
+hpMinus.forEach((p,i)=>{
+
+let nomor=i+41;
+
+document.write(`
+
+<div class="card product minus">
+
+    <div class="photo">
+
+        <img
+            src="foto${nomor}.jpg"
+            alt="${p[0]}"
+            onerror="this.style.display='none';
+            this.nextElementSibling.style.display='block';">
+
+        <div class="no-photo" style="display:none">
+
+            <b>⚠️</b>
+
+            Tambahkan foto${nomor}.jpg
+
+        </div>
+
+    </div>
+
+    <div class="detail">
+
+        <h3>${p[0]}</h3>
+
+        <span class="badge minus">
+            HP MINUS
+        </span>
+
+        <div class="info">
+
+            ⚠️ ${p[2]}<br>
+            ✓ Wajib cek kondisi<br>
+            ✓ Cocok untuk teknisi
+
+        </div>
+
+        <div class="price">
+            ${p[1]}
+        </div>
+
+        <a
+          class="buy"
+          href="https://wa.me/6281220425086?text=Halo%20NZ%20PhoneStore,%20saya%20tertarik%20dengan%20${encodeURIComponent(p[0])}"
+          target="_blank">
+          💬 Tanya Unit
+        </a>
+
+    </div>
+
+</div>
+
+`);
+
+});
+
+</script>
+
+</div>
+
+
+<!-- =================================================
+     KONSULTASI SERVICE
+================================================== -->
+
+<section class="service-box">
+
+    <h2>
+        🔧 KONSULTASI SERVICE HP
+    </h2>
+
+    <p>
+        HP rusak, mati total, LCD pecah,
+        battery bermasalah atau ada kendala lainnya?
+    </p>
+
+    <p>
+        Silakan konsultasi langsung dengan
+        bagian service NZ PhoneStore.
+    </p>
+
+    <p>
+        <strong>
+            WA SERVICE: 0853-6157-7277
+        </strong>
+    </p>
+
+    <a
+       href="https://wa.me/6285361577277?text=Halo%20NZ%20PhoneStore,%20saya%20ingin%20konsultasi%20service%20HP.%20Keluhan%20HP%20saya:"
+       target="_blank">
+
+       🔧 KONSULTASI SERVICE VIA WHATSAPP
+
+    </a>
+
+</section>
+
+
+<!-- =================================================
+     KONTAK
+================================================== -->
+
+<div class="contact">
+
+    <h2>
+        📍 NZ PHONESTORE
+    </h2>
+
+    <p>
+        <strong>Alamat:</strong><br>
+        Jln Elak Cot Tarom Tunong<br>
+        Toko NZ PhoneStore
+    </p>
+
+    <p>
+        <strong>📱 WhatsApp Toko:</strong><br>
+        0812-2042-5086
+    </p>
+
+    <p>
+        <strong>🔧 WhatsApp Service:</strong><br>
+        0853-6157-7277
+    </p>
+
+    <a
+       class="btn wa"
+       href="https://wa.me/6281220425086"
+       target="_blank">
+       💬 CHAT WA TOKO
+    </a>
+
+    <a
+       class="btn service-btn"
+       href="https://wa.me/6285361577277?text=Halo%20NZ%20PhoneStore,%20saya%20ingin%20konsultasi%20service%20HP"
+       target="_blank">
+       🔧 CHAT WA SERVICE
+    </a>
+
+</div>
+
+</div>
+
+
+<footer>
+
+    <p>
+        © 2026 <strong>NZ PhoneStore</strong>
+    </p>
+
+    <p>
+        Jual Beli HP • iPhone • Android • HP Minus • Service
+    </p>
+
+    <p>
+        Jln Elak Cot Tarom Tunong
+    </p>
+
+</footer>
+
+
+<script>
+
+function cariProduk(){
+
+    let keyword =
+        document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    document
+    .querySelectorAll(".product")
+    .forEach(product=>{
+
+        let text =
+            product.innerText.toLowerCase();
+
+        if(text.includes(keyword)){
+            product.style.display="";
+        }else{
+            product.style.display="none";
+        }
+
+    });
+
+}
+
+
+function filterProduk(category,button){
+
+    document
+    .querySelectorAll(".filter button")
+    .forEach(btn=>{
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    document
+    .getElementById("search")
+    .value="";
+
+    document
+    .querySelectorAll(".product")
+    .forEach(product=>{
+
+        if(category==="semua"){
+            product.style.display="";
+        }
+
+        else if(product.classList.contains(category)){
+            product.style.display="";
+        }
+
+        else{
+            product.style.display="none";
+        }
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
