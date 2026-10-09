@@ -8,6 +8,12 @@
   "icons": [
     {
       "src": "/logo-nz.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo-nz.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
