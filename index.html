@@ -11,7 +11,7 @@
 body{background:#050607;color:white}
 header{background:#0b0f12;padding:20px 15px;text-align:center;border-bottom:2px solid #a6ff00}
 .brand{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
-.logo-img{width:76px;height:76px;object-fit:cover;border-radius:50%;border:2px solid #a6ff00;background:#000}
+.logo-img{width:75px;height:75px;object-fit:cover;border-radius:50%;border:2px solid #a6ff00;background:#000}
 .logo{font-size:32px;font-weight:bold;color:#a6ff00}
 header p{color:#aaa;margin-top:8px}
 .hero{text-align:center;padding:45px 15px;background:linear-gradient(135deg,#111900,#050607)}
@@ -23,218 +23,237 @@ header p{color:#aaa;margin-top:8px}
 .service-btn{background:#a6ff00;color:#000}
 .container{max-width:1200px;margin:auto;padding:20px 15px 50px}
 .search{max-width:650px;margin:10px auto 20px}
-.search input{width:100%;padding:15px;border-radius:12px;border:1px solid #333;background:#11161b;color:white;outline:none;font-size:16px}
+.search input{width:100%;padding:15px;border-radius:12px;border:1px solid #333;background:#11161b;color:white;font-size:16px}
 .filter{text-align:center;margin-bottom:30px}
 .filter button{border:0;background:#1a2025;color:white;padding:11px 17px;margin:4px;border-radius:8px;cursor:pointer;font-weight:bold}
-.filter button:hover,.filter button.active{background:#a6ff00;color:#000}
-.judul{margin:35px 0 18px;padding-left:12px;border-left:5px solid #a6ff00;font-size:26px}
+.filter button.active,.filter button:hover{background:#a6ff00;color:#000}
+.judul{margin:35px 0 18px;padding-left:12px;border-left:5px solid #a6ff00;font-size:24px}
 .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:15px}
-.card{background:#11161b;border:1px solid #272e34;border-radius:15px;overflow:hidden;transition:.2s}
-.card:hover{transform:translateY(-5px);border-color:#a6ff00}
+.card{background:#11161b;border:1px solid #272e34;border-radius:15px;overflow:hidden}
+.card:hover{border-color:#a6ff00}
 .photo{height:210px;background:#1b2126;display:flex;align-items:center;justify-content:center;overflow:hidden}
 .photo img{width:100%;height:100%;object-fit:cover}
 .no-photo{color:#777;text-align:center}
 .no-photo b{display:block;font-size:40px;margin-bottom:8px}
 .detail{padding:14px}
-.detail h3{font-size:17px;margin-bottom:8px}
+.detail h3{font-size:16px;margin-bottom:8px}
 .badge{display:inline-block;background:#173a10;color:#a6ff00;padding:5px 8px;border-radius:5px;font-size:10px;font-weight:bold}
 .badge.minus{background:#422c08;color:#ffb000}
-.info{color:#999;font-size:13px;line-height:1.6;margin-top:8px}
+.info{color:#aaa;font-size:12px;line-height:1.7;margin-top:8px}
 .price{color:#a6ff00;font-size:18px;font-weight:bold;margin:12px 0}
 .buy{display:block;text-align:center;text-decoration:none;background:#25d366;color:white;padding:10px;border-radius:8px;font-weight:bold}
 .service-box{margin-top:45px;padding:35px 20px;border-radius:18px;text-align:center;background:linear-gradient(135deg,#a6ff00,#6e9e00);color:#000}
-.service-box h2{font-size:28px;margin-bottom:12px}
-.service-box p{line-height:1.7}
+.service-box h2{font-size:26px;margin-bottom:12px}
+.service-box p{line-height:1.8}
 .service-box a{display:inline-block;margin-top:15px;background:#000;color:#a6ff00;padding:14px 22px;border-radius:10px;text-decoration:none;font-weight:bold}
 .contact{margin-top:30px;padding:25px;background:#11161b;border:1px solid #292f34;border-radius:15px;line-height:1.9}
 .contact h2{color:#a6ff00;margin-bottom:10px}
 footer{text-align:center;background:#030405;padding:25px 15px;color:#777;line-height:1.8}
 footer strong{color:#a6ff00}
 @media(max-width:500px){
- .logo-img{width:58px;height:58px}
- .logo{font-size:26px}
- .hero h1{font-size:25px}
- .products{grid-template-columns:repeat(2,1fr);gap:10px}
- .photo{height:160px}
- .detail{padding:10px}
- .detail h3{font-size:14px}
- .info{font-size:11px}
- .price{font-size:15px}
- .buy{font-size:12px}
+.logo-img{width:58px;height:58px}
+.logo{font-size:25px}
+.hero h1{font-size:25px}
+.products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.photo{height:155px}
+.detail{padding:10px}
+.detail h3{font-size:14px}
+.price{font-size:15px}
+.buy{font-size:12px}
 }
 </style>
 </head>
 
 <body>
+
 <header>
- <div class="brand">
-  <img src="logo-nz.jpg" alt="Logo NZ PhoneStore" class="logo-img">
-  <div class="logo">NZ PHONESTORE</div>
- </div>
- <p>Jual Beli HP • iPhone • Android • HP Minus • Service</p>
+  <div class="brand">
+    <img src="logo-nz.jpg" alt="Logo NZ PhoneStore" class="logo-img">
+    <div class="logo">NZ PHONESTORE</div>
+  </div>
+  <p>Jual Beli HP • iPhone • Android • HP Minus • Service</p>
 </header>
 
 <section class="hero">
- <h1>Selamat Datang di <span>NZ PhoneStore</span></h1>
- <p>Menyediakan berbagai pilihan iPhone, Android, HP bekas dan HP minus. Silakan hubungi kami untuk stok dan kondisi terbaru.</p>
- <a class="btn wa" href="https://wa.me/6281220425086" target="_blank">💬 WA TOKO</a>
- <a class="btn service-btn" href="https://wa.me/6285361577277?text=Halo%20NZ%20PhoneStore,%20saya%20ingin%20konsultasi%20service%20HP" target="_blank">🔧 KONSULTASI SERVICE</a>
+  <h1>Selamat Datang di <span>NZ PhoneStore</span></h1>
+  <p>Menyediakan berbagai pilihan iPhone, Android, HP bekas dan HP minus. Hubungi kami untuk stok dan kondisi terbaru.</p>
+  <a class="btn wa" href="https://wa.me/6281220425086" target="_blank">💬 WA TOKO</a>
+  <a class="btn service-btn" href="https://wa.me/6285361577277?text=Halo%20NZ%20PhoneStore,%20saya%20ingin%20konsultasi%20service%20HP" target="_blank">🔧 KONSULTASI SERVICE</a>
 </section>
 
 <div class="container">
- <div class="search">
-  <input type="text" id="search" placeholder="🔎 Cari nama HP..." oninput="tampilkanProduk()">
- </div>
 
- <div class="filter">
+<div class="search">
+  <input id="search" type="text" placeholder="🔎 Cari nama HP..." oninput="tampilkanProduk()">
+</div>
+
+<div class="filter">
   <button class="active" onclick="pilihKategori('semua',this)">SEMUA</button>
   <button onclick="pilihKategori('iphone',this)">iPHONE</button>
   <button onclick="pilihKategori('android',this)">ANDROID</button>
   <button onclick="pilihKategori('minus',this)">⚠️ HP MINUS</button>
- </div>
+</div>
 
- <div id="daftar-produk"></div>
+<div id="daftar-produk"></div>
 
- <section class="service-box">
+<section class="service-box">
   <h2>🔧 KONSULTASI SERVICE HP</h2>
   <p>HP rusak, mati total, LCD pecah, baterai bermasalah atau kendala lainnya?</p>
-  <p>Silakan konsultasi langsung dengan bagian service NZ PhoneStore.</p>
+  <p>Silakan konsultasi dengan bagian service NZ PhoneStore.</p>
   <p><strong>WA SERVICE: 0853-6157-7277</strong></p>
-  <a href="https://wa.me/6285361577277?text=Halo%20NZ%20PhoneStore,%20saya%20ingin%20konsultasi%20service%20HP" target="_blank">🔧 KONSULTASI SERVICE VIA WHATSAPP</a>
- </section>
+  <a href="https://wa.me/6285361577277?text=Halo%20NZ%20PhoneStore,%20saya%20ingin%20konsultasi%20service%20HP" target="_blank">KONSULTASI SERVICE VIA WHATSAPP</a>
+</section>
 
- <div class="contact">
+<div class="contact">
   <h2>📍 NZ PHONESTORE</h2>
   <p><strong>Alamat:</strong><br>Jln Elak Cot Tarom Tunong<br>Toko NZ PhoneStore</p>
   <p><strong>📱 WhatsApp Toko:</strong><br>0812-2042-5086</p>
   <p><strong>🔧 WhatsApp Service:</strong><br>0853-6157-7277</p>
   <a class="btn wa" href="https://wa.me/6281220425086" target="_blank">💬 CHAT WA TOKO</a>
-  <a class="btn service-btn" href="https://wa.me/6285361577277?text=Halo%20NZ%20PhoneStore,%20saya%20ingin%20konsultasi%20service%20HP" target="_blank">🔧 CHAT WA SERVICE</a>
- </div>
+  <a class="btn service-btn" href="https://wa.me/6285361577277" target="_blank">🔧 CHAT WA SERVICE</a>
+</div>
+
 </div>
 
 <footer>
- <p>© 2026 <strong>NZ PhoneStore</strong></p>
- <p>Jual Beli HP • iPhone • Android • HP Minus • Service</p>
- <p>Jln Elak Cot Tarom Tunong</p>
+  <p>© 2026 <strong>NZ PhoneStore</strong></p>
+  <p>Jual Beli HP • iPhone • Android • HP Minus • Service</p>
+  <p>Jln Elak Cot Tarom Tunong</p>
 </footer>
 
 <script>
 const produk = [
- {nama:"iPhone XR bh81 permanen hitam 64GB",harga:"Rp 2.299.000",kategori:"iphone",foto:"foto1.jpg"},
- {nama:"iPhone 13 bh83 ibox hitam 128GB",harga:"Rp 6.900.000",kategori:"iphone",foto:"foto2.jpg"},
- {nama:"iPhone XR bh100 permanen merah 128GB",harga:"Rp 2.699.000",kategori:"iphone",foto:"foto3.jpg"},
- {nama:"iPhone 11 bh100 permanen 64GB",harga:"Rp 3.599.000",kategori:"iphone",foto:"foto4.jpg"},
- {nama:"iPhone XR bh100 blue bea cukai 64GB",harga:"Rp 2.499.000",kategori:"iphone",foto:"foto5.jpg"},
- {nama:"iPhone XR bh100 putih axisonly 128GB",harga:"Rp 2.509.000",kategori:"iphone",foto:"foto6.jpg"},
- {nama:"iPhone XR bh100 blue permanen 64GB",harga:"Rp 2.599.000",kategori:"iphone",foto:"foto7.jpg"},
- {nama:"iPhone 11 bh100 cukai putih 64GB",harga:"Rp 3.899.000",kategori:"iphone",foto:"foto8.jpg"},
- {nama:"iPhone X bh100 permanen 256GB",harga:"Rp 2.100.000",kategori:"iphone",foto:"foto9.jpg"},
- {nama:"iPhone 11 bh68 permanen merah 128GB",harga:"Rp 3.609.000",kategori:"iphone",foto:"foto10.jpg"},
- {nama:"iPhone 11 bh80 ibox putih 64GB",harga:"Rp 3.500.000",kategori:"iphone",foto:"foto11.jpg"},
- {nama:"iPhone 13 bh100 alloperator 100B",harga:"Rp 5.200.000",kategori:"iphone",foto:"foto12.jpg"},
- {nama:"iPhone 11 bh100 teregister 128GB",harga:"Rp 3.700.000",kategori:"iphone",foto:"foto13.jpg"},
- {nama:"iPhone 12 bh70 alloperator 128GB",harga:"Rp 3.109.000",kategori:"iphone",foto:"foto14.jpg"},
- {nama:"iPhone 13 bh100 ibox 128GB",harga:"Rp 7.099.000",kategori:"iphone",foto:"foto15.jpg"},
- {nama:"iPhone 7 Plus bh80 128GB",harga:"Rp 850.000",kategori:"iphone",foto:"foto16.jpg"},
- {nama:"iPhone X bh100 64GB",harga:"Rp 1.909.000",kategori:"iphone",foto:"foto17.jpg"},
- {nama:"iPhone 7G bh100 32GB",harga:"Rp 899.000",kategori:"iphone",foto:"foto18.jpg"},
- {nama:"iPhone 11 Pro Max bh68 128GB",harga:"Rp 2.999.000",kategori:"iphone",foto:"foto19.jpg"},
- {nama:"iPhone 7 Plus bh100 128GB",harga:"Rp 1.500.000",kategori:"iphone",foto:"foto20.jpg"},
+["iPhone XR bh81 permanen hitam 64GB","Rp 2.299.000","iphone"],
+["iPhone 13 bh83 iBox hitam 128GB","Rp 6.900.000","iphone"],
+["iPhone XR bh100 permanen merah 128GB","Rp 2.699.000","iphone"],
+["iPhone 11 bh100 permanen 64GB","Rp 3.599.000","iphone"],
+["iPhone XR bh100 blue bea cukai 64GB","Rp 2.499.000","iphone"],
+["iPhone XR bh100 putih 128GB","Rp 2.509.000","iphone"],
+["iPhone XR bh100 blue permanen 64GB","Rp 2.599.000","iphone"],
+["iPhone 11 bh100 putih 64GB","Rp 3.899.000","iphone"],
+["iPhone X bh100 permanen 256GB","Rp 2.100.000","iphone"],
+["iPhone 11 bh68 permanen merah 128GB","Rp 3.609.000","iphone"],
+["iPhone 11 bh80 iBox putih 64GB","Rp 3.500.000","iphone"],
+["iPhone 13 all operator 128GB","Rp 5.200.000","iphone"],
+["iPhone 11 teregister 128GB","Rp 3.700.000","iphone"],
+["iPhone 12 bh70 128GB","Rp 3.109.000","iphone"],
+["iPhone 13 iBox 128GB","Rp 7.099.000","iphone"],
+["iPhone 7 Plus bh80 128GB","Rp 850.000","iphone"],
+["iPhone X bh100 64GB","Rp 1.909.000","iphone"],
+["iPhone 7G bh100 32GB","Rp 899.000","iphone"],
+["iPhone 11 Pro Max bh68 128GB","Rp 2.999.000","iphone"],
+["iPhone 7 Plus bh100 128GB","Rp 1.500.000","iphone"],
 
- {nama:"Infinix Smart 6 RAM 2/32",harga:"Rp 2.499.000",kategori:"android",foto:"foto21.jpg"},
- {nama:"Infinix GT 30 Pro RAM 8+8/256",harga:"Rp 4.100.000",kategori:"android",foto:"foto22.jpg"},
- {nama:"Oppo A5i RAM 4/128",harga:"Rp 1.499.000",kategori:"android",foto:"foto23.jpg"},
- {nama:"Samsung A04S RAM 4/64",harga:"Rp 1.200.000",kategori:"android",foto:"foto24.jpg"},
- {nama:"Infinix Smart 20 RAM 4+4/128",harga:"Rp 1.800.000",kategori:"android",foto:"foto25.jpg"},
- {nama:"Oppo A3X RAM 4+4/64 Blue",harga:"Rp 1.109.000",kategori:"android",foto:"foto26.jpg"},
- {nama:"Samsung A25 5G RAM 8/256",harga:"Rp 2.899.000",kategori:"android",foto:"foto27.jpg"},
- {nama:"Samsung A53 RAM 8/256",harga:"Rp 2.500.000",kategori:"android",foto:"foto28.jpg"},
- {nama:"Nokia 130",harga:"Rp 299.000",kategori:"android",foto:"foto29.jpg"},
- {nama:"Samsung A12 RAM 4/128",harga:"Rp 799.000",kategori:"android",foto:"foto30.jpg"},
- {nama:"Xiaomi Note 5 Plus 4/64",harga:"Rp 559.000",kategori:"android",foto:"foto31.jpg"},
- {nama:"Vivo Y12s 3/32",harga:"Rp 759.000",kategori:"android",foto:"foto32.jpg"},
- {nama:"Oppo A3X 4+4/64",harga:"Rp 1.500.000",kategori:"android",foto:"foto33.jpg"},
- {nama:"Infinix Smart 20 4/64",harga:"Rp 1.609.000",kategori:"android",foto:"foto34.jpg"},
- {nama:"Vivo Y20 4/64",harga:"Rp 800.000",kategori:"android",foto:"foto35.jpg"},
- {nama:"Oppo A1k 2/16",harga:"Rp 550.000",kategori:"android",foto:"foto36.jpg"},
- {nama:"POCO X5 Pro 8/256",harga:"Rp 2.899.000",kategori:"android",foto:"foto37.jpg"},
- {nama:"POCO X6 8/256",harga:"Rp 2.699.000",kategori:"android",foto:"foto38.jpg"},
- {nama:"Realme C15 4/64",harga:"Rp 700.000",kategori:"android",foto:"foto39.jpg"},
- {nama:"Vivo Y20 4/64",harga:"Rp 4.000.000",kategori:"android",foto:"foto40.jpg"},
+["Infinix Smart 6 RAM 2/32","Rp 2.499.000","android"],
+["Infinix GT 30 Pro RAM 8+8/256","Rp 4.100.000","android"],
+["Oppo A5i RAM 4/128","Rp 1.499.000","android"],
+["Samsung A04S RAM 4/64","Rp 1.200.000","android"],
+["Infinix Smart 20 RAM 4+4/128","Rp 1.800.000","android"],
+["Oppo A3X RAM 4+4/64","Rp 1.109.000","android"],
+["Samsung A25 5G RAM 8/256","Rp 2.899.000","android"],
+["Samsung A53 RAM 8/256","Rp 2.500.000","android"],
+["Nokia 130","Rp 299.000","android"],
+["Samsung A12 RAM 4/128","Rp 799.000","android"],
+["Xiaomi Note 5 Plus 4/64","Rp 559.000","android"],
+["Vivo Y12s 3/32","Rp 759.000","android"],
+["Oppo A3X 4+4/64","Rp 1.500.000","android"],
+["Infinix Smart 20 4/64","Rp 1.609.000","android"],
+["Vivo Y20 4/64","Rp 800.000","android"],
+["Oppo A1k 2/16","Rp 550.000","android"],
+["POCO X5 Pro 8/256","Rp 2.899.000","android"],
+["POCO X6 8/256","Rp 2.699.000","android"],
+["Realme C15 4/64","Rp 700.000","android"],
+["Vivo Y20 4/64","Rp 800.000","android"],
 
- {nama:"ZTE A35 mati total",harga:"Rp 399.000",kategori:"minus",kerusakan:"Mati total",foto:"foto41.jpg"},
- {nama:"Samsung A10 speaker buruk",harga:"Rp 499.000",kategori:"minus",kerusakan:"Speaker bawah buruk",foto:"foto42.jpg"},
- {nama:"Oppo A17 speaker off",harga:"Rp 509.000",kategori:"minus",kerusakan:"Speaker mati",foto:"foto43.jpg"},
- {nama:"Oppo A12 LCD rusak",harga:"Rp 399.000",kategori:"minus",kerusakan:"Wajib ganti LCD",foto:"foto44.jpg"},
- {nama:"Samsung A03S jaringan lemah",harga:"Rp 599.000",kategori:"minus",kerusakan:"Jaringan lemah",foto:"foto45.jpg"},
- {nama:"Infinix Smart 5 speaker off",harga:"Rp 399.000",kategori:"minus",kerusakan:"Speaker mati",foto:"foto46.jpg"},
- {nama:"Nokia rusak bagian cas",harga:"Rp 109.000",kategori:"minus",kerusakan:"Bagian cas rusak",foto:"foto47.jpg"},
- {nama:"iPhone 12 bypass",harga:"Rp 699.000",kategori:"minus",kerusakan:"Bypass",foto:"foto48.jpg"},
- {nama:"Redmi 5A backdoor hilang",harga:"Rp 199.000",kategori:"minus",kerusakan:"Backdoor hilang",foto:"foto49.jpg"},
- {nama:"Vivo Y20 temperatur",harga:"Rp 399.000",kategori:"minus",kerusakan:"Masalah temperatur",foto:"foto50.jpg"},
- {nama:"Samsung A11 LCD rusak",harga:"Rp 499.000",kategori:"minus",kerusakan:"Wajib ganti LCD",foto:"foto51.jpg"},
- {nama:"Redmi 9A LCD rusak",harga:"Rp 399.000",kategori:"minus",kerusakan:"Wajib ganti LCD",foto:"foto52.jpg"},
- {nama:"Realme C2 tombol samping rusak",harga:"Rp 309.000",kategori:"minus",kerusakan:"Tombol samping rusak",foto:"foto53.jpg"},
- {nama:"iPhone XR layar bayang hitam",harga:"Rp 1.800.000",kategori:"minus",kerusakan:"Shadow hitam layar",foto:"foto54.jpg"},
- {nama:"Itel Vision 1 LCD rusak",harga:"Rp 189.000",kategori:"minus",kerusakan:"LCD bermasalah",foto:"foto55.jpg"},
- {nama:"Oppo A1k LCD rusak",harga:"Rp 209.000",kategori:"minus",kerusakan:"Wajib ganti LCD",foto:"foto56.jpg"},
- {nama:"Realme C30 LCD rusak",harga:"Rp 309.000",kategori:"minus",kerusakan:"LCD bermasalah",foto:"foto57.jpg"},
- {nama:"Vivo Y91 baterai rusak",harga:"Rp 999.000",kategori:"minus",kerusakan:"Wajib ganti baterai",foto:"foto58.jpg"},
- {nama:"Infinix Smart 5 mati total",harga:"Rp 209.000",kategori:"minus",kerusakan:"Mati total",foto:"foto59.jpg"},
- {nama:"iPhone XR bypass",harga:"Rp 509.000",kategori:"minus",kerusakan:"Bypass",foto:"foto60.jpg"}
+["ZTE A35 mati total","Rp 399.000","minus","Mati total"],
+["Samsung A10 speaker buruk","Rp 499.000","minus","Speaker bawah buruk"],
+["Oppo A17 speaker mati","Rp 509.000","minus","Speaker mati"],
+["Oppo A12 LCD rusak","Rp 399.000","minus","Wajib ganti LCD"],
+["Samsung A03S jaringan lemah","Rp 599.000","minus","Jaringan lemah"],
+["Infinix Smart 5 speaker mati","Rp 399.000","minus","Speaker mati"],
+["Nokia rusak bagian cas","Rp 109.000","minus","Bagian cas rusak"],
+["iPhone 12 bypass","Rp 699.000","minus","Bypass"],
+["Redmi 5A backdoor hilang","Rp 199.000","minus","Backdoor hilang"],
+["Vivo Y20 masalah temperatur","Rp 399.000","minus","Masalah temperatur"],
+["Samsung A11 LCD rusak","Rp 499.000","minus","Wajib ganti LCD"],
+["Redmi 9A LCD rusak","Rp 399.000","minus","Wajib ganti LCD"],
+["Realme C2 tombol samping rusak","Rp 309.000","minus","Tombol samping rusak"],
+["iPhone XR layar bayang hitam","Rp 1.800.000","minus","Shadow layar"],
+["Itel Vision 1 LCD rusak","Rp 189.000","minus","LCD bermasalah"],
+["Oppo A1k LCD rusak","Rp 209.000","minus","Wajib ganti LCD"],
+["Realme C30 LCD rusak","Rp 309.000","minus","LCD bermasalah"],
+["Vivo Y91 baterai rusak","Rp 999.000","minus","Wajib ganti baterai"],
+["Infinix Smart 5 mati total","Rp 209.000","minus","Mati total"],
+["iPhone XR bypass","Rp 509.000","minus","Bypass"]
 ];
 
-let kategoriAktif="semua";
+let kategoriAktif = "semua";
 
-function tampilkanProduk(){
- const kata=document.getElementById("search").value.toLowerCase();
- const hasil=produk.filter(p=>
-  (kategoriAktif==="semua"||p.kategori===kategoriAktif)&&
-  (p.nama.toLowerCase().includes(kata))
- );
- const area=document.getElementById("daftar-produk");
- area.innerHTML="";
- const judul={
-  iphone:"20 PRODUK iPHONE",
-  android:"20 PRODUK ANDROID",
-  minus:"⚠️ 20 PRODUK HP MINUS"
- };
- if(kategoriAktif==="semua"&&!kata){
-  ["iphone","android","minus"].forEach(k=>{
-   area.insertAdjacentHTML("beforeend",`<h2 class="judul">${judul[k]}</h2><div class="products" id="grup-${k}"></div>`);
+function kartu(p, nomor) {
+  const kategori = p[2];
+  const foto = kategori === "iphone" ? nomor + 1 :
+               kategori === "android" ? nomor + 1 : nomor + 1;
+  const namaFoto = "foto" + foto + ".jpg";
+  const label = kategori === "minus" ? "HP MINUS" : kategori.toUpperCase();
+  const kondisi = kategori === "minus" ? "⚠️ " + p[3] + "<br>" : "";
+  const pesan = encodeURIComponent("Halo NZ PhoneStore, saya tertarik dengan " + p[0]);
+
+  return `<div class="card product ${kategori}">
+    <div class="photo">
+      <img src="${namaFoto}" alt="${p[0]}"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <div class="no-photo" style="display:none"><b>📱</b>Tambahkan ${namaFoto}</div>
+    </div>
+    <div class="detail">
+      <h3>${p[0]}</h3>
+      <span class="badge ${kategori === "minus" ? "minus" : ""}">${label}</span>
+      <div class="info">${kondisi}✓ Silakan cek kondisi barang<br>✓ Stok dapat berubah</div>
+      <div class="price">${p[1]}</div>
+      <a class="buy" href="https://wa.me/6281220425086?text=${pesan}" target="_blank">💬 Tanya / Beli</a>
+    </div>
+  </div>`;
+}
+
+function tampilkanProduk() {
+  const kata = document.getElementById("search").value.toLowerCase();
+  const area = document.getElementById("daftar-produk");
+  area.innerHTML = "";
+
+  const kelompok = [
+    {k:"iphone",judul:"20 PRODUK iPHONE"},
+    {k:"android",judul:"20 PRODUK ANDROID"},
+    {k:"minus",judul:"⚠️ 20 PRODUK HP MINUS"}
+  ];
+
+  kelompok.forEach(g => {
+    if (kategoriAktif !== "semua" && kategoriAktif !== g.k) return;
+
+    const daftar = produk.map((p,i)=>({...p,idx:i}))
+      .filter(p=>p[2]===g.k && p[0].toLowerCase().includes(kata));
+
+    if (!daftar.length) return;
+
+    const judul = document.createElement("h2");
+    judul.className = "judul";
+    judul.textContent = g.judul;
+    area.appendChild(judul);
+
+    const grid = document.createElement("div");
+    grid.className = "products";
+    grid.innerHTML = daftar.map(p=>kartu(p,p.idx)).join("");
+    area.appendChild(grid);
   });
-  hasil.forEach(p=>document.getElementById("grup-"+p.kategori).insertAdjacentHTML("beforeend",kartu(p)));
- }else{
-  area.insertAdjacentHTML("beforeend",`<h2 class="judul">Hasil pencarian (${hasil.length})</h2><div class="products" id="hasil"></div>`);
-  hasil.forEach(p=>document.getElementById("hasil").insertAdjacentHTML("beforeend",kartu(p)));
- }
+
+  if (!area.innerHTML) area.innerHTML = "<p>Produk tidak ditemukan.</p>";
 }
 
-function kartu(p){
- const badge=p.kategori==="minus"?"HP MINUS":p.kategori.toUpperCase();
- const detail=p.kategori==="minus"?`⚠️ ${p.kerusakan}<br>`:"";
- const teks=`Halo NZ PhoneStore, saya tertarik dengan ${p.nama}`;
- return `<div class="card product ${p.kategori}">
-  <div class="photo">
-   <img src="${p.foto}" alt="${p.nama}" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-   <div class="no-photo" style="display:none"><b>${p.kategori==="minus"?"⚠️":"📱"}</b>Tambahkan ${p.foto}</div>
-  </div>
-  <div class="detail">
-   <h3>${p.nama}</h3><span class="badge ${p.kategori==="minus"?"minus":""}">${badge}</span>
-   <div class="info">${detail}✓ Kondisi sesuai unit<br>✓ Silakan cek barang<br>✓ Stok dapat berubah</div>
-   <div class="price">${p.harga}</div>
-   <a class="buy" href="https://wa.me/6281220425086?text=${encodeURIComponent(teks)}" target="_blank">💬 Tanya / Beli</a>
-  </div>
- </div>`;
+function pilihKategori(k, tombol) {
+  kategoriAktif = k;
+  document.querySelectorAll(".filter button").forEach(b=>b.classList.remove("active"));
+  tombol.classList.add("active");
+  tampilkanProduk();
 }
 
-function pilihKategori(k,button){
- kategoriAktif=k;
- document.querySelectorAll(".filter button").forEach(b=>b.classList.remove("active"));
- button.classList.add("active");
- tampilkanProduk();
-}
 tampilkanProduk();
 </script>
 </body>
